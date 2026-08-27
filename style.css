@@ -6261,26 +6261,107 @@ body.dark .focus-bar {
         font-size: 15px;
     }
 
-}
-/* =========================================================
-   📱 ULTIMATE MOBILE VIEW
-   Desktop remains unchanged
+}/* =========================================================
+   📱 MOBILE LANDSCAPE EXPERIENCE
+   Desktop-style portfolio on phone
    ========================================================= */
 
-@media (max-width: 850px) {
+/* Portrait phone */
+@media screen and (max-width: 850px) and (orientation: portrait) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Rotation message */
+    body::before {
+        content: "↻";
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -65%);
+        z-index: 10000;
+
+        width: 75px;
+        height: 75px;
+
+        border: 2px solid var(--accent);
+        border-radius: 22px;
+
+        display: grid;
+        place-items: center;
+
+        font-size: 42px;
+        font-weight: 900;
+
+        color: var(--accent);
+
+        background: rgba(17,17,17,.95);
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,.35);
+
+        animation:
+            phoneRotate 2s ease-in-out infinite;
+    }
+
+    body::after {
+        content: "Rotate your phone";
+        position: fixed;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translateX(-50%);
+
+        z-index: 10000;
+
+        color: white;
+
+        font-family: "Inter", system-ui, sans-serif;
+
+        font-size: 16px;
+        font-weight: 800;
+
+        letter-spacing: .5px;
+
+        white-space: nowrap;
+    }
+
+    @keyframes phoneRotate {
+
+        0%, 100% {
+            transform:
+                translate(-50%, -65%)
+                rotate(0deg);
+        }
+
+        50% {
+            transform:
+                translate(-50%, -65%)
+                rotate(90deg);
+        }
+    }
+}
+
+
+/* =========================================================
+   📱 LANDSCAPE PHONE
+   Keep the premium desktop feeling
+   ========================================================= */
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
 
     html,
     body {
         width: 100%;
-        max-width: 100%;
+        min-width: 100%;
         overflow-x: hidden;
     }
 
-    /* ---------- NAVBAR ---------- */
-
     .navbar {
-        height: 64px;
-        padding: 0 18px;
+        height: 62px;
+        padding: 0 4%;
     }
 
     .logo {
@@ -6289,155 +6370,64 @@ body.dark .focus-bar {
 
     .theme-button,
     .menu-button {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
     }
-
-    .mobile-menu {
-        inset: 64px 0 auto 0;
-    }
-
-    /* ---------- HERO ---------- */
 
     .hero {
-        width: 100%;
-        min-height: auto;
-        padding: 45px 20px 30px;
+        min-height: calc(100vh - 62px);
+        padding: 35px 5% 25px;
     }
 
     .hero-grid {
-        width: 100%;
-        gap: 45px;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .availability {
-        font-size: 8px;
-        padding: 6px 10px;
-        margin-bottom: 18px;
-    }
-
-    .eyebrow {
-        font-size: 9px;
-        margin-bottom: 12px;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 35px;
     }
 
     .hero h1 {
-        font-size: clamp(52px, 16vw, 78px);
-        line-height: .86;
-        letter-spacing: -4px;
-        margin-bottom: 22px;
+        font-size: clamp(55px, 10vw, 95px);
+        letter-spacing: -5px;
     }
 
     .hero-role {
-        font-size: 18px;
-        gap: 7px;
-        margin-bottom: 15px;
+        font-size: 20px;
     }
 
     .hero-description {
-        font-size: 14px;
-        line-height: 1.6;
-        max-width: 100%;
+        font-size: 13px;
+        max-width: 500px;
     }
 
     .hero-buttons {
-        gap: 9px;
-        margin-top: 22px;
-    }
-
-    .primary-button,
-    .secondary-button {
-        padding: 11px 16px;
-        font-size: 11px;
+        margin-top: 20px;
     }
 
     .hero-socials {
-        gap: 15px;
-        margin-top: 20px;
-        font-size: 11px;
+        margin-top: 18px;
     }
 
-    /* ---------- PROFILE ---------- */
-
     .profile-wrapper {
-        width: min(340px, 88vw);
+        width: min(300px, 75%);
     }
 
     .profile-card {
         border-radius: 28px;
     }
 
-    .profile-info {
-        left: 18px;
-        right: 18px;
-        bottom: 18px;
-    }
-
-    .profile-info h3 {
-        font-size: 20px;
-    }
-
-    .profile-info p {
-        font-size: 12px;
-    }
-
-    .profile-info small {
-        font-size: 9px;
-    }
-
-    .floating-card {
-        padding: 9px 12px;
-        border-radius: 12px;
-    }
-
-    .floating-card span {
-        font-size: 7px;
-    }
-
-    .floating-card strong {
-        font-size: 10px;
-    }
-
     .floating-top {
-        right: -5px;
+        right: -20px;
     }
 
     .floating-bottom {
-        left: -5px;
+        left: -20px;
     }
-
-    /* ---------- MARQUEE ---------- */
-
-    .marquee {
-        padding: 13px 0;
-    }
-
-    .marquee-track {
-        gap: 18px;
-    }
-
-    .marquee span {
-        font-size: 12px;
-    }
-
-    .marquee i {
-        font-size: 11px;
-    }
-
-    /* ---------- SECTIONS ---------- */
 
     .section {
-        width: 100%;
-        padding: 75px 20px;
+        padding: 75px 5%;
     }
 
     .section-number {
-        margin-bottom: 35px;
-        font-size: 8px;
+        margin-bottom: 30px;
     }
 
     .section-heading {
@@ -6445,493 +6435,128 @@ body.dark .focus-bar {
     }
 
     .section-heading h2 {
-        font-size: clamp(36px, 11vw, 55px);
-        line-height: .95;
+        font-size: clamp(38px, 6vw, 60px);
         letter-spacing: -3px;
     }
 
-    /* ---------- ABOUT ---------- */
-
     .about-grid {
-        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
     }
 
     .about-text {
         font-size: 15px;
-        line-height: 1.65;
     }
-
-    .about-text p {
-        margin-bottom: 18px;
-    }
-
-    /* ---------- STATS ---------- */
 
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
         margin-top: 50px;
     }
 
     .stat-card {
         padding: 20px 15px;
-        border-radius: 18px;
     }
 
     .stat-card strong {
-        font-size: 30px;
-    }
-
-    .stat-card span {
-        font-size: 9px;
-    }
-
-    /* ---------- JOURNEY ---------- */
-
-    .journey-section {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .journey-line {
-        padding-left: 28px;
-    }
-
-    .journey-item {
-        grid-template-columns: 1fr;
-        gap: 5px;
-        padding: 25px 0 45px;
-    }
-
-    .journey-marker {
-        left: -47px;
-        top: 25px;
-        width: 34px;
-        height: 34px;
-        font-size: 8px;
-    }
-
-    .journey-item h3 {
-        font-size: 25px;
-    }
-
-    .journey-item p {
-        font-size: 13px;
-    }
-
-    .journey-item small {
-        font-size: 10px;
-    }
-
-    /* ---------- SKILLS ---------- */
-
-    .skills-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .skill-card {
-        min-height: 155px;
-        padding: 18px;
-        border-radius: 18px;
-    }
-
-    .skill-card h3 {
-        font-size: 18px;
-        margin: 14px 0 5px;
-    }
-
-    .skill-level {
-        font-size: 9px;
-    }
-
-    /* ---------- PROJECTS ---------- */
-
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .project-card {
-        min-height: 280px;
-        padding: 19px;
-        border-radius: 20px;
-    }
-
-    .project-card h3 {
-        font-size: 20px;
-        margin: 20px 0 9px;
-    }
-
-    .project-card p {
-        font-size: 11px;
-        line-height: 1.55;
-    }
-
-    .project-tech {
-        padding-top: 15px;
-        font-size: 9px !important;
-    }
-
-    .project-link {
-        margin-top: 12px;
-        font-size: 10px;
-    }
-
-    /* ---------- CERTIFICATIONS ---------- */
-
-    .certification-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .cert-card {
-        padding: 20px 16px;
-        border-radius: 19px;
-    }
-
-    .cert-icon {
-        font-size: 20px;
-        margin-bottom: 17px;
-    }
-
-    .cert-card h3 {
-        font-size: 17px;
-    }
-
-    .cert-provider {
-        font-size: 8px;
-        margin-bottom: 10px;
-    }
-
-    .cert-card p:last-child {
-        font-size: 10px;
-        line-height: 1.5;
-    }
-
-    /* ---------- ANALYTICS ---------- */
-
-    .analytics-grid,
-    .intelligence-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .chart-card,
-    .intelligence-card {
-        min-height: 400px;
-        padding: 20px;
-        border-radius: 20px;
-    }
-
-    .chart-header h3,
-    .intelligence-header h3 {
-        font-size: 18px;
-    }
-
-    .canvas-wrapper {
-        height: 270px;
-    }
-
-    .insight-card {
-        padding: 25px 20px;
-        border-radius: 20px;
-        gap: 20px;
-    }
-
-    .insight-card h3 {
-        font-size: 21px;
-    }
-
-    .insight-card p:last-child {
-        font-size: 12px;
-    }
-
-    .insight-number {
-        min-width: 100%;
-    }
-
-    .insight-number span {
-        font-size: 48px;
-    }
-
-    /* ---------- STACK ---------- */
-
-    .stack-container {
-        width: 100%;
-        gap: 10px;
-    }
-
-    .stack-layer {
-        grid-template-columns: 32px minmax(0, 1fr) 34px;
-        min-height: 120px;
-        padding: 17px 13px;
-        border-radius: 18px;
-    }
-
-    .stack-main {
-        min-width: 0;
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .stack-title h3 {
-        font-size: 22px;
-        letter-spacing: -1px;
-    }
-
-    .stack-skills {
-        gap: 5px;
-    }
-
-    .stack-skills span {
-        padding: 5px 8px;
-        font-size: 8px;
-    }
-
-    .stack-arrow {
-        width: 32px;
-        height: 32px;
-    }
-
-    .stack-footer {
-        margin-top: 25px;
-        font-size: 8px;
-    }
-
-    /* ---------- PROFESSIONAL MIX ---------- */
-
-    .mix-visual {
-        min-height: 250px;
-    }
-
-    .mix-node {
-        width: 65px;
-        height: 65px;
-        font-size: 7px;
-    }
-
-    .node-entrepreneurship {
-        width: 85px;
-        height: 85px;
-    }
-
-    .mix-center {
-        width: 48px;
-        height: 48px;
-        font-size: 12px;
-    }
-
-    /* ---------- DIRECTION ---------- */
-
-    .direction-card {
-        padding: 25px 18px;
-        gap: 25px;
-        border-radius: 20px;
-    }
-
-    .direction-content h3 {
-        font-size: 27px;
-    }
-
-    .direction-path {
-        gap: 5px;
-    }
-
-    .path-item {
-        min-width: 65px;
-        padding: 11px 6px;
-        border-radius: 13px;
-    }
-
-    .path-item strong {
-        font-size: 11px;
-    }
-
-    .path-item small {
-        font-size: 7px;
-    }
-
-    .path-item span {
-        font-size: 7px;
-    }
-
-    .path-arrow {
-        font-size: 12px;
-    }
-
-    /* ---------- VISION ---------- */
-
-    .vision-section {
-        padding: 90px 20px;
-    }
-
-    .vision-content h2 {
-        font-size: clamp(42px, 13vw, 70px);
-        letter-spacing: -4px;
-    }
-
-    .vision-content > p:not(.eyebrow) {
-        font-size: 14px;
-    }
-
-    .vision-card {
-        padding: 25px 20px;
-        border-radius: 20px;
-    }
-
-    .vision-card strong {
         font-size: 32px;
     }
 
-    .vision-card p {
-        font-size: 12px;
+    .stat-card span {
+        font-size: 10px;
     }
 
-    /* ---------- CONTACT ---------- */
-
-    .contact-section {
-        padding: 90px 20px;
+    .journey-section {
+        padding-left: 7%;
+        padding-right: 7%;
     }
 
-    .contact-section h2 {
-        font-size: clamp(42px, 13vw, 70px);
-        letter-spacing: -4px;
+    .journey-line {
+        max-width: 850px;
     }
 
-    .contact-description {
-        font-size: 13px;
-        margin-bottom: 30px;
+    .journey-item {
+        grid-template-columns: 75px 1fr;
+        padding-bottom: 45px;
     }
 
-    .contact-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+    .skills-container {
+        grid-template-columns:
+            repeat(3, 1fr);
     }
 
-    .contact-card {
-        min-height: 130px;
-        padding: 18px;
-        border-radius: 17px;
+    .projects-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
     }
 
-    .contact-card strong {
-        font-size: 12px;
-        overflow-wrap: anywhere;
+    .certification-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
     }
 
-    .contact-card small {
-        font-size: 8px;
-    }
-
-    /* ---------- FOOTER ---------- */
-
-    footer {
-        padding: 25px 20px;
-        gap: 12px;
-    }
-
-    footer strong {
-        font-size: 18px;
-    }
-
-    footer p {
-        font-size: 9px;
-    }
-}
-
-
-/* =========================================================
-   📱 VERY SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .hero {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .hero h1 {
-        font-size: 50px;
-        letter-spacing: -3px;
-    }
-
-    .hero-role {
-        font-size: 16px;
-    }
-
-    .section {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .skills-container,
-    .projects-grid,
-    .certification-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stack-layer {
-        grid-template-columns: 28px minmax(0, 1fr) 30px;
-    }
-}
-
-
-/* =========================================================
-   🔄 PHONE LANDSCAPE
-   Keeps the desktop-like wide feeling
-   ========================================================= */
-
-@media (max-width: 850px) and (orientation: landscape) {
-
-    .hero {
-        min-height: calc(100vh - 64px);
-        padding-top: 25px;
-        padding-bottom: 20px;
-    }
-
-    .hero-grid {
-        grid-template-columns: 1.1fr .9fr;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .hero h1 {
-        font-size: clamp(45px, 9vw, 70px);
-    }
-
-    .hero-description {
-        font-size: 12px;
-        max-width: 500px;
-    }
-
-    .hero-buttons {
-        margin-top: 15px;
-    }
-
-    .hero-socials {
-        margin-top: 13px;
-    }
-
-    .profile-wrapper {
-        width: min(270px, 40vw);
-    }
-
-    .about-grid,
-    .analytics-grid,
-    .intelligence-grid,
-    .direction-card {
+    .analytics-grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    .contact-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .chart-card {
+        min-height: 350px;
+        padding: 22px;
     }
 
-    .section {
-        padding-top: 60px;
-        padding-bottom: 60px;
+    .canvas-wrapper {
+        height: 230px;
+    }
+
+    .intelligence-grid {
+        grid-template-columns: .9fr 1.1fr;
+    }
+
+    .intelligence-card {
+        min-height: 380px;
+        padding: 22px;
+    }
+
+    .stack-layer {
+        grid-template-columns: 50px 1fr 40px;
+        min-height: 110px;
+        padding: 18px 20px;
+    }
+
+    .stack-main {
+        grid-template-columns: 170px 1fr;
+        gap: 20px;
+    }
+
+    .stack-title h3 {
+        font-size: 27px;
+    }
+
+    .stack-skills span {
+        padding: 6px 9px;
+        font-size: 9px;
+    }
+
+    .direction-card {
+        grid-template-columns: .8fr 1.2fr;
+        padding: 30px;
+    }
+
+    .contact-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .contact-section {
+        padding: 90px 5%;
+    }
+
+    .contact-section h2 {
+        font-size: clamp(45px, 8vw, 80px);
+        letter-spacing: -5px;
+    }
+
+    footer {
+        flex-direction: row;
+        align-items: center;
     }
 }
