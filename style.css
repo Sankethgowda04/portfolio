@@ -6262,3 +6262,132 @@ body.dark .focus-bar {
     }
 
 }
+/* =========================================================
+   📱 LANDSCAPE PHONE = DESKTOP/LAPTOP STYLE
+   ========================================================= */
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+
+    html {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    /* Keep the desktop-style layout */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Keep sections filling the landscape screen */
+    section {
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    /* Desktop-like typography, scaled for phone */
+    h1 {
+        font-size: clamp(28px, 6vw, 64px);
+        line-height: 1.05;
+    }
+
+    h2 {
+        font-size: clamp(22px, 4vw, 42px);
+        line-height: 1.1;
+    }
+
+    h3 {
+        font-size: clamp(16px, 2.5vw, 28px);
+    }
+
+    p {
+        font-size: clamp(11px, 1.5vw, 17px);
+        line-height: 1.5;
+    }
+
+    /* Keep horizontal layouts */
+    .hero-content,
+    .about-content,
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    /* Keep cards similar to laptop */
+    .projects-grid,
+    .skills-grid,
+    .services-grid,
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    /* Images scale without breaking layout */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Navigation stays horizontal */
+    nav {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Buttons remain compact */
+    button,
+    .btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    /* Reduce excessive spacing */
+    section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+
+/* =========================================================
+   📱 SMALL LANDSCAPE PHONES
+   ========================================================= */
+
+@media screen and (max-width: 700px) and (orientation: landscape) {
+
+    h1 {
+        font-size: clamp(24px, 6vw, 48px);
+    }
+
+    h2 {
+        font-size: clamp(20px, 4vw, 34px);
+    }
+
+    p {
+        font-size: 11px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    section {
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
