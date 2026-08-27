@@ -6262,23 +6262,6 @@ body.dark .focus-bar {
     }
 
 }
-
-/* =========================================================
-   📱 PHONE — KEEP EXACT DESKTOP VIEW, JUST SCALE IT DOWN
-   ========================================================= */
-
-@media screen and (max-width: 600px) {
-
-    body {
-        min-width: 1000px;
-        width: 1000px;
-        overflow-x: hidden;
-        transform-origin: top left;
-        transform: scale(0.39);
-        width: 256.41%;
-    }
-
-}
 /* =========================================================
    📱 SMART DESKTOP VIEW ON MOBILE
    Keeps the original desktop design and scales it neatly.
