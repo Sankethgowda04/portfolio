@@ -6262,3 +6262,169 @@ body.dark .focus-bar {
     }
 
 }
+/* =========================================================
+   PERFECT MOBILE FIT
+   Keeps desktop design while making mobile compact
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html {
+        width: 100%;
+        overflow-x: hidden;
+        font-size: 14px;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+    /* Main page spacing */
+    main,
+    section,
+    header,
+    footer {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Keep content inside the phone */
+    .container,
+    .wrapper,
+    .content {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    /* Headings become smaller */
+    h1 {
+        font-size: clamp(2rem, 8vw, 4rem);
+        line-height: 1.05;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        line-height: 1.15;
+    }
+
+    h3 {
+        font-size: clamp(1.1rem, 4.5vw, 1.8rem);
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 1rem;
+    }
+
+    /* Normal text */
+    p,
+    li {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    /* Navigation */
+    nav {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    /* Images */
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Cards */
+    .card,
+    .project-card,
+    .skill-card,
+    .project {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Buttons */
+    button,
+    .btn,
+    .button,
+    a.btn {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Prevent long words/links breaking the layout */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    a,
+    p,
+    span,
+    div {
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    html {
+        font-size: 13px;
+    }
+
+    .container,
+    .wrapper,
+    .content {
+        width: 94%;
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 9vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.4rem, 7vw, 2.2rem);
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+    p,
+    li {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    button,
+    .btn,
+    .button {
+        font-size: 0.8rem;
+        padding: 9px 14px;
+    }
+}
