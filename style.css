@@ -6446,3 +6446,120 @@ body.dark .focus-bar {
         padding-right: 10px;
     }
 }
+
+
+/* =========================================================
+   MOBILE — KEEP DESKTOP-STYLE LAYOUT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Keep sections fitting inside the phone */
+    section,
+    header,
+    footer,
+    main {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Scale large desktop elements down */
+    .container,
+    .wrapper,
+    .content,
+    .hero-content {
+        width: 92%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    /* Prevent large text from overflowing */
+    h1 {
+        font-size: clamp(2rem, 10vw, 5rem);
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    h2 {
+        font-size: clamp(1.7rem, 7vw, 3rem);
+    }
+
+    h3 {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+    }
+
+    p {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    /* Make images scale instead of overflowing */
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Keep cards inside the screen */
+    .card,
+    .project,
+    .project-card,
+    .skill-card {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Buttons fit the screen */
+    button,
+    .btn,
+    .button {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .container,
+    .wrapper,
+    .content,
+    .hero-content {
+        width: 94%;
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 11vw, 3.5rem);
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    img,
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
