@@ -6260,86 +6260,1073 @@ body.dark .focus-bar {
     .path-arrow {
         font-size: 15px;
     }
-
-}/* =========================================================
-   📱 MOBILE LANDSCAPE EXPERIENCE
-   Desktop-style portfolio on phone
+/* =========================================================
+   📱 SANKETH GOWDA — PREMIUM MOBILE EXPERIENCE
    ========================================================= */
 
-/* Portrait phone */
-@media screen and (max-width: 850px) and (orientation: portrait) {
+/* ---------------------------------------------------------
+   TABLET / SMALL LAPTOP
+   --------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .profile-wrapper {
+        max-width: 420px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE NAVIGATION
+   --------------------------------------------------------- */
+
+@media (max-width: 850px) {
+
+    html {
+        scroll-behavior: smooth;
+    }
 
     body {
         overflow-x: hidden;
     }
 
-    /* Rotation message */
-    body::before {
-        content: "↻";
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -65%);
-        z-index: 10000;
-
-        width: 75px;
-        height: 75px;
-
-        border: 2px solid var(--accent);
-        border-radius: 22px;
-
-        display: grid;
-        place-items: center;
-
-        font-size: 42px;
-        font-weight: 900;
-
-        color: var(--accent);
-
-        background: rgba(17,17,17,.95);
-
-        box-shadow:
-            0 20px 60px rgba(0,0,0,.35);
-
-        animation:
-            phoneRotate 2s ease-in-out infinite;
+    .navbar nav {
+        display: none;
     }
 
+    .menu-button {
+        display: grid;
+        place-items: center;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    /* Better touch targets */
+
+    .theme-button,
+    .menu-button {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
+
+    .hero {
+        padding:
+            45px 6%
+            70px;
+    }
+
+    .hero-grid {
+        gap: 55px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(58px, 15vw, 95px);
+
+        line-height: .86;
+
+        letter-spacing: -5px;
+
+        margin-bottom: 24px;
+    }
+
+    .hero-role {
+        gap: 8px;
+
+        font-size:
+            clamp(19px, 5vw, 25px);
+
+        line-height: 1.2;
+
+        margin-bottom: 18px;
+    }
+
+    .hero-description {
+        max-width: 600px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+
+        margin-top: 25px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        min-height: 48px;
+
+        padding: 13px 18px;
+
+        font-size: 12px;
+    }
+
+    .hero-socials {
+        gap: 17px;
+
+        margin-top: 22px;
+
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       PROFILE
+       ----------------------------------------------------- */
+
+    .profile-wrapper {
+        width: min(390px, 88%);
+
+        margin: 0 auto;
+    }
+
+    .profile-card {
+        border-radius: 30px;
+
+        box-shadow:
+            0 30px 70px
+            rgba(0,0,0,.18);
+    }
+
+    .profile-info {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .profile-info h3 {
+        font-size: 22px;
+    }
+
+    .profile-info p {
+        font-size: 13px;
+    }
+
+    .floating-card {
+        padding: 10px 13px;
+
+        border-radius: 13px;
+    }
+
+    .floating-top {
+        right: -12px;
+    }
+
+    .floating-bottom {
+        left: -12px;
+    }
+
+
+    /* -----------------------------------------------------
+       MARQUEE
+       ----------------------------------------------------- */
+
+    .marquee {
+        padding: 15px 0;
+    }
+
+    .marquee-track {
+        gap: 18px;
+
+        animation-duration: 20s;
+    }
+
+    .marquee span {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       GENERAL SECTIONS
+       ----------------------------------------------------- */
+
+    .section {
+        padding:
+            85px 6%;
+    }
+
+    .section-number {
+        margin-bottom: 30px;
+
+        font-size: 9px;
+    }
+
+    .section-heading {
+        margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+        font-size:
+            clamp(40px, 10vw, 62px);
+
+        line-height: .95;
+
+        letter-spacing: -3px;
+    }
+
+
+    /* -----------------------------------------------------
+       ABOUT
+       ----------------------------------------------------- */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+    }
+
+    .about-text {
+        font-size: 16px;
+
+        line-height: 1.75;
+    }
+
+    .about-text p {
+        margin-bottom: 20px;
+    }
+
+    .about-rope {
+        right: -300px;
+
+        opacity: .18;
+    }
+
+
+    /* -----------------------------------------------------
+       STATS
+       ----------------------------------------------------- */
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+        margin-top: 55px;
+    }
+
+    .stat-card {
+        min-height: 125px;
+
+        padding: 22px 17px;
+
+        border-radius: 20px;
+    }
+
+    .stat-card strong {
+        font-size: 34px;
+    }
+
+    .stat-card span {
+        font-size: 10px;
+
+        line-height: 1.4;
+    }
+
+
+    /* -----------------------------------------------------
+       JOURNEY
+       ----------------------------------------------------- */
+
+    .journey-section {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .journey-line {
+        padding-left: 28px;
+    }
+
+    .journey-item {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+
+        padding:
+            30px 0
+            55px;
+    }
+
+    .journey-marker {
+        left: -46px;
+
+        top: 30px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 9px;
+    }
+
+    .journey-item h3 {
+        font-size:
+            clamp(25px, 7vw, 38px);
+    }
+
+    .journey-item p {
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+
+    /* -----------------------------------------------------
+       SKILLS / STACK
+       ----------------------------------------------------- */
+
+    .skills-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .skill-card {
+        min-height: 165px;
+
+        padding: 21px;
+
+        border-radius: 20px;
+    }
+
+    .skill-card h3 {
+        font-size: 20px;
+
+        margin-top: 15px;
+    }
+
+    .skill-level {
+        font-size: 10px;
+    }
+
+    .skills-intro {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .stack-container {
+        gap: 11px;
+    }
+
+    .stack-layer {
+        grid-template-columns:
+            38px 1fr 35px;
+
+        min-height: 0;
+
+        padding:
+            20px 15px;
+
+        border-radius: 20px;
+    }
+
+    .stack-main {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+    }
+
+    .stack-title h3 {
+        font-size: 25px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .stack-category {
+        font-size: 8px;
+    }
+
+    .stack-skills {
+        gap: 6px;
+    }
+
+    .stack-skills span {
+        padding:
+            6px 9px;
+
+        font-size: 9px;
+    }
+
+    .stack-arrow {
+        width: 32px;
+        height: 32px;
+
+        font-size: 12px;
+    }
+
+    .stack-footer {
+        margin-top: 25px;
+
+        font-size: 8px;
+
+        line-height: 1.7;
+
+        text-align: center;
+    }
+
+
+    /* -----------------------------------------------------
+       PROJECTS
+       ----------------------------------------------------- */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .project-card {
+        min-height: 285px;
+
+        padding: 25px;
+
+        border-radius: 23px;
+    }
+
+    .project-card h3 {
+        font-size: 25px;
+
+        margin-top: 22px;
+    }
+
+    .project-card p {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------------------
+       CERTIFICATIONS
+       ----------------------------------------------------- */
+
+    .certification-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .cert-card {
+        padding: 25px;
+
+        border-radius: 21px;
+    }
+
+    .cert-icon {
+        margin-bottom: 18px;
+
+        font-size: 23px;
+    }
+
+    .cert-card h3 {
+        font-size: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       ANALYTICS
+       ----------------------------------------------------- */
+
+    .analytics-grid,
+    .intelligence-grid {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+    }
+
+    .analytics-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .chart-card,
+    .intelligence-card {
+        min-height: 0;
+
+        padding: 23px;
+
+        border-radius: 23px;
+    }
+
+    .canvas-wrapper {
+        height: 250px;
+    }
+
+    .intelligence-header {
+        margin-bottom: 30px;
+    }
+
+    .intelligence-header h3 {
+        font-size: 23px;
+    }
+
+    .focus-list {
+        gap: 22px;
+    }
+
+    .focus-top {
+        font-size: 12px;
+    }
+
+    .focus-bar {
+        height: 6px;
+    }
+
+
+    /* -----------------------------------------------------
+       PROFESSIONAL MIX
+       ----------------------------------------------------- */
+
+    .mix-visual {
+        min-height: 310px;
+    }
+
+    .mix-node {
+        width: 78px;
+        height: 78px;
+
+        font-size: 8px;
+    }
+
+    .node-entrepreneurship {
+        width: 95px;
+        height: 95px;
+    }
+
+    .mix-center {
+        width: 55px;
+        height: 55px;
+
+        font-size: 14px;
+    }
+
+    .mix-description strong {
+        font-size: 16px;
+    }
+
+    .mix-description p {
+        font-size: 11px;
+
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------------------
+       INSIGHT
+       ----------------------------------------------------- */
+
+    .insight-card {
+        margin-top: 14px;
+
+        padding: 28px 23px;
+
+        border-radius: 23px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .insight-card h3 {
+        font-size: 24px;
+    }
+
+    .insight-card p:last-child {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+    .insight-number {
+        min-width: 0;
+
+        text-align: left;
+    }
+
+    .insight-number span {
+        font-size: 52px;
+    }
+
+
+    /* -----------------------------------------------------
+       DIRECTION
+       ----------------------------------------------------- */
+
+    .direction-card {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 28px 22px;
+
+        border-radius: 23px;
+    }
+
+    .direction-content h3 {
+        font-size:
+            clamp(27px, 7vw, 40px);
+    }
+
+    .direction-path {
+        gap: 6px;
+    }
+
+    .path-item {
+        min-width: 75px;
+
+        padding: 13px 7px;
+
+        border-radius: 14px;
+    }
+
+    .path-item strong {
+        font-size: 13px;
+    }
+
+    .path-item small {
+        font-size: 8px;
+    }
+
+    .path-arrow {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       VISION
+       ----------------------------------------------------- */
+
+    .vision-section {
+        padding:
+            100px 6%;
+    }
+
+    .vision-content h2 {
+        font-size:
+            clamp(48px, 13vw, 80px);
+
+        letter-spacing: -4px;
+    }
+
+    .vision-content > p:not(.eyebrow) {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .vision-card {
+        padding: 27px;
+
+        border-radius: 23px;
+    }
+
+    .vision-card strong {
+        font-size: 38px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+       ----------------------------------------------------- */
+
+    .contact-section {
+        padding:
+            95px 6%;
+    }
+
+    .contact-section h2 {
+        font-size:
+            clamp(47px, 13vw, 82px);
+
+        letter-spacing: -4px;
+    }
+
+    .contact-description {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        margin-bottom: 35px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .contact-card {
+        min-height: 135px;
+
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
+    footer {
+        padding:
+            28px 6%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    footer strong {
+        font-size: 20px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   📱 SMALL PHONE — 550px
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .hero {
+        padding:
+            35px 5%
+            65px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(55px, 17vw, 75px);
+
+        letter-spacing: -4px;
+    }
+
+    .hero-role {
+        font-size: 19px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .secondary-button {
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .hero-socials {
+        flex-wrap: wrap;
+    }
+
+    .profile-wrapper {
+        width: 92%;
+    }
+
+    .profile-card {
+        border-radius: 25px;
+    }
+
+    .floating-top {
+        right: -8px;
+    }
+
+    .floating-bottom {
+        left: -8px;
+    }
+
+    .section {
+        padding:
+            75px 5%;
+    }
+
+    .section-heading h2 {
+        font-size:
+            clamp(38px, 11vw, 55px);
+
+        letter-spacing: -3px;
+    }
+
+    .stats-grid {
+        gap: 8px;
+    }
+
+    .stat-card {
+        min-height: 115px;
+
+        padding: 19px 14px;
+
+        border-radius: 17px;
+    }
+
+    .stat-card strong {
+        font-size: 30px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        min-height: 150px;
+    }
+
+    .stack-layer {
+        grid-template-columns:
+            32px 1fr 32px;
+
+        padding:
+            18px 13px;
+    }
+
+    .stack-title h3 {
+        font-size: 23px;
+    }
+
+    .stack-skills span {
+        font-size: 8px;
+
+        padding:
+            6px 8px;
+    }
+
+    .journey-line {
+        padding-left: 24px;
+    }
+
+    .journey-marker {
+        left: -42px;
+
+        width: 31px;
+        height: 31px;
+    }
+
+    .mix-visual {
+        min-height: 285px;
+    }
+
+    .mix-node {
+        width: 70px;
+        height: 70px;
+
+        font-size: 7px;
+    }
+
+    .node-entrepreneurship {
+        width: 86px;
+        height: 86px;
+    }
+
+    .mix-center {
+        width: 50px;
+        height: 50px;
+
+        font-size: 13px;
+    }
+
+    .path-item {
+        min-width: 70px;
+    }
+
+    .path-arrow {
+        display: none;
+    }
+
+    .vision-section {
+        padding:
+            85px 5%;
+    }
+
+    .vision-content h2 {
+        letter-spacing: -3px;
+    }
+
+    .vision-card {
+        padding: 23px;
+    }
+
+    .vision-card strong {
+        font-size: 34px;
+    }
+
+    .contact-section {
+        padding:
+            85px 5%;
+    }
+
+    .contact-section h2 {
+        letter-spacing: -3px;
+    }
+}
+
+
+/* =========================================================
+   🔄 PORTRAIT PHONE — ROTATION REQUIRED
+   ========================================================= */
+
+@media screen and (max-width: 850px) and (orientation: portrait) {
+
+    /*
+       Hide the actual website while the phone
+       is held vertically.
+    */
+
+    body > * {
+        visibility: hidden;
+    }
+
+    body::before,
     body::after {
-        content: "Rotate your phone";
+        visibility: visible;
+    }
+
+
+    /* Dark premium overlay */
+
+    body::before {
+
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 99998;
+
+        background:
+            radial-gradient(
+                circle at center,
+                #202020 0%,
+                #090909 70%
+            );
+    }
+
+
+    /* Rotating phone icon */
+
+    body::after {
+
+        content:
+            "↻\A\A ROTATE YOUR PHONE\A\A Landscape mode required";
+
+        white-space: pre;
+
         position: fixed;
 
         left: 50%;
         top: 50%;
 
-        transform: translateX(-50%);
+        transform:
+            translate(-50%, -50%);
 
-        z-index: 10000;
+        z-index: 99999;
+
+        width: min(320px, 82vw);
+
+        padding:
+            35px 20px;
+
+        border:
+            1px solid rgba(255,255,255,.12);
+
+        border-radius: 28px;
+
+        background:
+            rgba(255,255,255,.055);
+
+        backdrop-filter:
+            blur(25px);
+
+        box-shadow:
+            0 30px 100px
+            rgba(0,0,0,.5);
 
         color: white;
 
-        font-family: "Inter", system-ui, sans-serif;
+        text-align: center;
 
-        font-size: 16px;
-        font-weight: 800;
+        font-family:
+            "Inter",
+            system-ui,
+            sans-serif;
 
-        letter-spacing: .5px;
+        font-size: 13px;
 
-        white-space: nowrap;
+        font-weight: 900;
+
+        line-height: 1.5;
+
+        letter-spacing: 2px;
+
+        animation:
+            rotatePhoneMessage 2.4s
+            ease-in-out infinite;
     }
 
-    @keyframes phoneRotate {
 
-        0%, 100% {
+    @keyframes rotatePhoneMessage {
+
+        0%,
+        100% {
             transform:
-                translate(-50%, -65%)
-                rotate(0deg);
+                translate(-50%, -50%)
+                scale(1);
         }
 
         50% {
             transform:
-                translate(-50%, -65%)
-                rotate(90deg);
+                translate(-50%, -50%)
+                scale(1.04);
         }
     }
 }
@@ -6347,7 +7334,7 @@ body.dark .focus-bar {
 
 /* =========================================================
    📱 LANDSCAPE PHONE
-   Keep the premium desktop feeling
+   PREMIUM DESKTOP-LIKE MODE
    ========================================================= */
 
 @media screen and (max-width: 850px) and (orientation: landscape) {
@@ -6355,17 +7342,26 @@ body.dark .focus-bar {
     html,
     body {
         width: 100%;
+
         min-width: 100%;
+
         overflow-x: hidden;
     }
 
+
+    /* -----------------------------------------------------
+       NAVBAR
+       ----------------------------------------------------- */
+
     .navbar {
-        height: 62px;
-        padding: 0 4%;
+        height: 58px;
+
+        padding:
+            0 4%;
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .theme-button,
@@ -6374,189 +7370,586 @@ body.dark .focus-bar {
         height: 36px;
     }
 
+
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
+
     .hero {
-        min-height: calc(100vh - 62px);
-        padding: 35px 5% 25px;
+
+        min-height:
+            calc(100vh - 58px);
+
+        padding:
+            30px 5%
+            35px;
     }
 
     .hero-grid {
-        grid-template-columns: 1.1fr .9fr;
-        gap: 35px;
+
+        grid-template-columns:
+            1.15fr .85fr;
+
+        gap: 30px;
+
+        align-items: center;
     }
 
     .hero h1 {
-        font-size: clamp(55px, 10vw, 95px);
+
+        font-size:
+            clamp(52px, 10vw, 90px);
+
         letter-spacing: -5px;
     }
 
     .hero-role {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .hero-description {
-        font-size: 13px;
-        max-width: 500px;
+
+        font-size: 12px;
+
+        line-height: 1.6;
+
+        max-width: 470px;
     }
 
     .hero-buttons {
-        margin-top: 20px;
-    }
-
-    .hero-socials {
         margin-top: 18px;
     }
 
+    .primary-button,
+    .secondary-button {
+
+        padding:
+            11px 17px;
+
+        min-height: 42px;
+    }
+
+    .hero-socials {
+        margin-top: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       PROFILE
+       ----------------------------------------------------- */
+
     .profile-wrapper {
-        width: min(300px, 75%);
+        width:
+            min(285px, 78%);
     }
 
     .profile-card {
-        border-radius: 28px;
+        border-radius: 24px;
+    }
+
+    .floating-card {
+        padding:
+            8px 11px;
     }
 
     .floating-top {
-        right: -20px;
+        right: -18px;
     }
 
     .floating-bottom {
-        left: -20px;
+        left: -18px;
     }
 
+
+    /* -----------------------------------------------------
+       SECTIONS
+       ----------------------------------------------------- */
+
     .section {
-        padding: 75px 5%;
+        padding:
+            65px 5%;
     }
 
     .section-number {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     .section-heading {
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
 
     .section-heading h2 {
-        font-size: clamp(38px, 6vw, 60px);
+
+        font-size:
+            clamp(35px, 6vw, 57px);
+
         letter-spacing: -3px;
     }
 
+
+    /* -----------------------------------------------------
+       ABOUT
+       ----------------------------------------------------- */
+
     .about-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 45px;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 35px;
     }
 
     .about-text {
-        font-size: 15px;
+        font-size: 13px;
+
+        line-height: 1.65;
     }
 
+
+    /* -----------------------------------------------------
+       STATS
+       ----------------------------------------------------- */
+
     .stats-grid {
-        grid-template-columns: repeat(4, 1fr);
-        margin-top: 50px;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 8px;
+
+        margin-top: 40px;
     }
 
     .stat-card {
-        padding: 20px 15px;
+        padding:
+            17px 12px;
+
+        min-height: 105px;
     }
 
     .stat-card strong {
-        font-size: 32px;
+        font-size: 27px;
     }
 
     .stat-card span {
-        font-size: 10px;
+        font-size: 9px;
     }
 
+
+    /* -----------------------------------------------------
+       JOURNEY
+       ----------------------------------------------------- */
+
     .journey-section {
+
         padding-left: 7%;
         padding-right: 7%;
     }
 
-    .journey-line {
-        max-width: 850px;
+    .journey-item {
+
+        grid-template-columns:
+            65px 1fr;
+
+        gap: 15px;
+
+        padding:
+            25px 0
+            40px;
     }
 
-    .journey-item {
-        grid-template-columns: 75px 1fr;
-        padding-bottom: 45px;
+    .journey-marker {
+
+        left: -50px;
+
+        width: 32px;
+        height: 32px;
     }
+
+    .journey-item h3 {
+        font-size:
+            clamp(23px, 4vw, 34px);
+    }
+
+    .journey-item p {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       SKILLS
+       ----------------------------------------------------- */
 
     .skills-container {
+
         grid-template-columns:
             repeat(3, 1fr);
+
+        gap: 8px;
     }
 
-    .projects-grid {
-        grid-template-columns:
-            repeat(3, 1fr);
+    .skill-card {
+
+        min-height: 145px;
+
+        padding: 18px;
+
+        border-radius: 18px;
     }
 
-    .certification-grid {
-        grid-template-columns:
-            repeat(3, 1fr);
+    .skill-card h3 {
+        font-size: 18px;
     }
 
-    .analytics-grid {
-        grid-template-columns: 1fr 1fr;
-    }
 
-    .chart-card {
-        min-height: 350px;
-        padding: 22px;
-    }
-
-    .canvas-wrapper {
-        height: 230px;
-    }
-
-    .intelligence-grid {
-        grid-template-columns: .9fr 1.1fr;
-    }
-
-    .intelligence-card {
-        min-height: 380px;
-        padding: 22px;
-    }
+    /* -----------------------------------------------------
+       STACK
+       ----------------------------------------------------- */
 
     .stack-layer {
-        grid-template-columns: 50px 1fr 40px;
-        min-height: 110px;
-        padding: 18px 20px;
+
+        grid-template-columns:
+            40px 1fr 35px;
+
+        min-height: 95px;
+
+        padding:
+            15px 17px;
     }
 
     .stack-main {
-        grid-template-columns: 170px 1fr;
-        gap: 20px;
+
+        grid-template-columns:
+            155px 1fr;
+
+        gap: 15px;
     }
 
     .stack-title h3 {
-        font-size: 27px;
+        font-size: 23px;
+    }
+
+    .stack-skills {
+        gap: 5px;
     }
 
     .stack-skills span {
-        padding: 6px 9px;
-        font-size: 9px;
+
+        padding:
+            5px 8px;
+
+        font-size: 8px;
     }
 
-    .direction-card {
-        grid-template-columns: .8fr 1.2fr;
-        padding: 30px;
-    }
 
-    .contact-grid {
+    /* -----------------------------------------------------
+       PROJECTS
+       ----------------------------------------------------- */
+
+    .projects-grid {
+
         grid-template-columns:
             repeat(3, 1fr);
+
+        gap: 10px;
     }
 
-    .contact-section {
-        padding: 90px 5%;
+    .project-card {
+
+        min-height: 275px;
+
+        padding: 22px;
+
+        border-radius: 20px;
     }
 
-    .contact-section h2 {
-        font-size: clamp(45px, 8vw, 80px);
+    .project-card h3 {
+        font-size: 22px;
+
+        margin-top: 20px;
+    }
+
+    .project-card p {
+        font-size: 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       CERTIFICATIONS
+       ----------------------------------------------------- */
+
+    .certification-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 10px;
+    }
+
+    .cert-card {
+
+        padding: 20px;
+
+        border-radius: 19px;
+    }
+
+    .cert-card h3 {
+        font-size: 17px;
+    }
+
+    .cert-card p:last-child {
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       ANALYTICS
+       ----------------------------------------------------- */
+
+    .analytics-grid,
+    .intelligence-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .chart-card,
+    .intelligence-card {
+
+        min-height: 340px;
+
+        padding: 19px;
+
+        border-radius: 20px;
+    }
+
+    .canvas-wrapper {
+        height: 210px;
+    }
+
+    .intelligence-header {
+        margin-bottom: 25px;
+    }
+
+    .intelligence-header h3 {
+        font-size: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       MIX
+       ----------------------------------------------------- */
+
+    .mix-visual {
+        min-height: 210px;
+    }
+
+    .mix-node {
+
+        width: 65px;
+        height: 65px;
+
+        font-size: 7px;
+    }
+
+    .node-entrepreneurship {
+
+        width: 80px;
+        height: 80px;
+    }
+
+    .mix-center {
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       DIRECTION
+       ----------------------------------------------------- */
+
+    .direction-card {
+
+        grid-template-columns:
+            .8fr 1.2fr;
+
+        gap: 25px;
+
+        padding:
+            25px;
+    }
+
+    .direction-content h3 {
+        font-size:
+            clamp(25px, 4vw, 37px);
+    }
+
+    .path-item {
+
+        min-width: 75px;
+
+        padding:
+            12px 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       VISION
+       ----------------------------------------------------- */
+
+    .vision-section {
+
+        padding:
+            100px 5%;
+    }
+
+    .vision-content h2 {
+
+        font-size:
+            clamp(45px, 8vw, 80px);
+
         letter-spacing: -5px;
     }
 
+    .vision-content > p:not(.eyebrow) {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+       ----------------------------------------------------- */
+
+    .contact-section {
+
+        padding:
+            80px 5%;
+    }
+
+    .contact-section h2 {
+
+        font-size:
+            clamp(42px, 8vw, 75px);
+
+        letter-spacing: -5px;
+    }
+
+    .contact-description {
+        font-size: 12px;
+    }
+
+    .contact-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 8px;
+    }
+
+    .contact-card {
+
+        min-height: 125px;
+
+        padding: 18px;
+    }
+
+    .contact-card strong {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
     footer {
+
+        padding:
+            25px 5%;
+
         flex-direction: row;
+
         align-items: center;
+    }
+
+    footer strong {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   ✨ MOBILE TOUCH / PERFORMANCE POLISH
+   ========================================================= */
+
+@media (hover: none) {
+
+    .project-card:hover,
+    .skill-card:hover,
+    .stat-card:hover,
+    .cert-card:hover,
+    .contact-card:hover,
+    .intelligence-card:hover,
+    .stack-layer:hover,
+    .vision-card:hover {
+
+        transform: none;
+        box-shadow: none;
+    }
+
+    .profile-card:hover .profile-image {
+        transform: none;
+    }
+}
+
+
+/* Prevent accidental horizontal overflow */
+
+@media (max-width: 850px) {
+
+    img,
+    canvas,
+    video {
+        max-width: 100%;
+    }
+
+    .hero,
+    .section,
+    .vision-section,
+    .contact-section,
+    .analytics-section {
+        overflow: hidden;
+    }
+
+    button,
+    a {
+        -webkit-tap-highlight-color:
+            transparent;
+    }
+}
+
+
+/* =========================================================
+   ♿ REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: .01ms !important;
     }
 }
